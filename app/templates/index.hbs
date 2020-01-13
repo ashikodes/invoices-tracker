@@ -9,13 +9,18 @@
       onChange=(action this.changeDate)
       placeholder="Filter by date"
       dateFormat='d-m-Y'
+      autocomplete="off"
     }}
   {{/if}}
 </div>
 {{#if @model.length}}
   <p><b>List of Invoices</b></p>
 {{else}}
-  <b><i>No recorded invoices</i></b>
+  {{#if dateFilter}}
+    <span class="invoice-link" {{on 'click' this.clearFilter}}>Clear filters</span>
+  {{else}}
+    <b><i>No recorded invoices</i></b>
+  {{/if}}
 {{/if}}
 <div class="invoices">
   {{#each @model as |invoice|}}

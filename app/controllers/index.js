@@ -14,4 +14,9 @@ export default class IndexController extends Controller {
   deleteInvoice(invoice) {
     invoice.destroyRecord();
   }
+
+  @action
+  clearFilter() {
+    this.set('dateFilter', '');
+  }
 }
