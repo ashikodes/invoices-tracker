@@ -62,3 +62,12 @@ body {
   margin-right: 1rem;
   cursor: pointer;
 }
+.invoice-link.edit {
+  color: #5cbf9f;
+}
+.invoice-link.delete {
+  color: red;
+}
+.filter-input {
+  padding: 11px;
+}

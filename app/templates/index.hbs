@@ -1,7 +1,22 @@
 <div class="user-nav">
   <LinkTo @route="add" class="button">Create Invoice</LinkTo>
+  {{#if @model.length}}
+    {{ember-flatpickr
+      allowInput=true
+      classNames='filter-input'
+      date=(readonly dateFilter)
+      locale='en'
+      onChange=(action this.changeDate)
+      placeholder="Filter by date"
+      dateFormat='d-m-Y'
+    }}
+  {{/if}}
 </div>
-<p><b>List of Invoices</b></p>
+{{#if @model.length}}
+  <p><b>List of Invoices</b></p>
+{{else}}
+  <b><i>No recorded invoices</i></b>
+{{/if}}
 <div class="invoices">
   {{#each @model as |invoice|}}
   <div class="invoice-card">
@@ -9,7 +24,8 @@
       <h4>{{invoice.title}}</h4>
       <h6>{{invoice.dateSold}}</h6>
     </div>
-    <LinkTo class="invoice-link" @model={{invoice}} @route="edit">Edit</LinkTo>
+    <LinkTo class="invoice-link edit" @model={{invoice}} @route="edit">Edit</LinkTo>
+    <span {{on 'click' (fn this.deleteInvoice invoice)}} class="invoice-link delete">Delete</span>
   </div>
   {{/each}}
 </div>
