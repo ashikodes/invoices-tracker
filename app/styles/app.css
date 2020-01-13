@@ -35,6 +35,7 @@ body {
   border: none;
   font-size: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 .invoices {
   margin-top: 2rem;
