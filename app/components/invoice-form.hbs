@@ -4,7 +4,7 @@
   <Input @placeholder="Enter amount" @type="tel" @value={{@invoice.amount}} required="required" />
 
   {{ember-flatpickr
-    allowInput=true
+    allowInput=false
     date=(readonly @invoice.dateSold)
     locale='en'
     onChange=(action this.changeDate)
