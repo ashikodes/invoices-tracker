@@ -7,9 +7,11 @@
     allowInput=true
     date=(readonly @invoice.dateSold)
     locale='en'
-    onChange=(action (mut @invoice.dateSold))
+    onChange=(action this.changeDate)
     placeholder="Pick date"
+    dateFormat='d-m-Y'
     required=true
+    autocomplete="off"
   }}
 
   <button type="submit" class="button">Add invoice</button>
