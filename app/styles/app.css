@@ -23,7 +23,7 @@ body {
   padding: 20px;
 }
 .user-nav {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: space-between;
 }
@@ -35,6 +35,9 @@ body {
   border: none;
   font-size: 20px;
   text-decoration: none;
+}
+.invoices {
+  margin-top: 2rem;
 }
 .invoice-card {
   background-color: #f6f6f6;
@@ -70,4 +73,9 @@ body {
 }
 .filter-input {
   padding: 11px;
+}
+.filter-link {
+  margin-right: 1rem;
+  cursor: pointer;
+  text-align: right;
 }

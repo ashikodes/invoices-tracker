@@ -2,7 +2,7 @@
   <LinkTo @route="add" class="button">Create Invoice</LinkTo>
   {{#if @model.length}}
     {{ember-flatpickr
-      allowInput=true
+      allowInput=false
       classNames='filter-input'
       date=(readonly dateFilter)
       locale='en'
@@ -13,16 +13,17 @@
     }}
   {{/if}}
 </div>
-{{#if @model.length}}
-  <p><b>List of Invoices</b></p>
-{{else}}
-  {{#if dateFilter}}
-    <span class="invoice-link" {{on 'click' this.clearFilter}}>Clear filters</span>
-  {{else}}
-    <b><i>No recorded invoices</i></b>
-  {{/if}}
+{{#if dateFilter}}
+  <div class="filter-link" {{on 'click' this.clearFilter}}>Clear filters</div>
 {{/if}}
 <div class="invoices">
+  {{#if @model.length}}
+    <p><b>List of Invoices</b></p>
+  {{else}}
+    {{#unless dateFilter}}
+      <b><i>No recorded invoices</i></b>
+    {{/unless}}
+  {{/if}}
   {{#each @model as |invoice|}}
   <div class="invoice-card">
     <div class="invoice-details">
