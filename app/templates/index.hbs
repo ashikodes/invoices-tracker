@@ -9,6 +9,7 @@
       <h4>{{invoice.title}}</h4>
       <h6>{{invoice.dateSold}}</h6>
     </div>
+    <LinkTo class="invoice-link" @model={{invoice}} @route="edit">Edit</LinkTo>
   </div>
   {{/each}}
 </div>

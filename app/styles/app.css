@@ -57,3 +57,8 @@ body {
   border: 1px solid #d3d3d3;
   display: block;
 }
+.invoice-link {
+  text-decoration: none;
+  margin-right: 1rem;
+  cursor: pointer;
+}
