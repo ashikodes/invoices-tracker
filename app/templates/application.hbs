@@ -1,5 +1,8 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+  <h2 class="page-heading">
+    <LinkTo @route="index">InvoicesTracker</LinkTo>
+  </h2>
+  <div class="page-content">
+    {{outlet}}
+  </div>
+</div>
