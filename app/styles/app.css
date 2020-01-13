@@ -22,3 +22,26 @@ body {
 .page-content {
   padding: 20px;
 }
+.user-nav {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  padding: 10px 30px;
+  color: #fff;
+  background: #016aba;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  text-decoration: none;
+}
+.invoice-card {
+  background-color: #f6f6f6;
+  padding: 10px 15px;
+  margin-top: 1rem;
+}
+.invoice-details {
+  display: flex;
+  justify-content: space-between;
+}

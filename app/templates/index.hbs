@@ -1,1 +1,14 @@
-{{outlet}}
+<div class="user-nav">
+  <LinkTo @route="add" class="button">Create Invoice</LinkTo>
+</div>
+<p><b>List of Invoices</b></p>
+<div class="invoices">
+  {{#each @model as |invoice|}}
+  <div class="invoice-card">
+    <div class="invoice-details">
+      <h4>{{invoice.title}}</h4>
+      <h6>{{invoice.dateSold}}</h6>
+    </div>
+  </div>
+  {{/each}}
+</div>
