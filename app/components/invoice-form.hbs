@@ -1,0 +1,16 @@
+<form class="invoice-form" {{on "submit" this.addInvoice}}>
+  <Input @placeholder="Enter titile" @type="text" @value={{@invoice.title}} required="required" />
+
+  <Input @placeholder="Enter amount" @type="tel" @value={{@invoice.amount}} required="required" />
+
+  {{ember-flatpickr
+    allowInput=true
+    date=(readonly @invoice.dateSold)
+    locale='en'
+    onChange=(action (mut @invoice.dateSold))
+    placeholder="Pick date"
+    required=true
+  }}
+
+  <button type="submit" class="button">Add invoice</button>
+</form>
